@@ -1,0 +1,59 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+credentials.json
+client_secret*.json
+
+# StudyMate runtime
+database/*
+!database/.gitkeep
+
+data/documents/*
+!data/documents/.gitkeep
+
+data/projects/*
+!data/projects/.gitkeep
+
+index/*
+!index/.gitkeep
+
+logs/*
+!logs/.gitkeep
+
+exports/*
+!exports/.gitkeep
+
+# SQLite
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Generated documents
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+
+# Development backups
+*.bak
+*.backup
+*.before-*
+*~
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

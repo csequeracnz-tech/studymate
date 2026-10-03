@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Amigo</title>
+    <link rel="stylesheet" href="/static/styles.css?v=23">
+</head>
+<body>
+<div class="app-shell">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark">EA</div>
+            <div>
+                <h1>El Amigo</h1>
+                <span>StudyMate</span>
+            </div>
+        </div>
+
+    <div class="sidebar-source-selector">
+        <div class="sidebar-source-label">SOURCES</div>
+<div class="source-selector">
+                <button
+                    id="sourceSelectorButton"
+                    class="source-selector-button"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    <span class="source-selector-icon">⌕</span>
+                    <span id="sourceSelectorLabel">My material only</span>
+                    <span class="source-selector-chevron">⌄</span>
+                </button>
+
+                <div
+                    id="sourceSelectorMenu"
+                    class="source-selector-menu"
+                    hidden
+                >
+                    <button
+                        class="source-option active"
+                        type="button"
+                        data-mode="material"
+                    >
+                        <span class="source-option-check">✓</span>
+                        <span>
+                            <strong>My material only</strong>
+                            <small>
+                                Use only my uploaded notes, PDFs and slides.
+                            </small>
+                        </span>
+                    </button>
+
+                    <button
+                        class="source-option"
+                        type="button"
+                        data-mode="research"
+                    >
+                        <span class="source-option-check"></span>
+                        <span>
+                            <strong>My material + Research</strong>
+                            <small>
+                                Combine my material with trusted academic and web sources.
+                            </small>
+                        </span>
+                    </button>
+                </div>
+            </div>
+    </div>
+
+        <div class="sidebar-section">
+            <div class="subject-heading">
+                <label for="subjectSelect">Subject</label>
+                <button id="newSubjectButton" class="new-subject-button"
+                        type="button" title="Add subject">＋</button>
+            </div>
+            <select id="subjectSelect" hidden></select>
+
+            <div class="subject-selector">
+                <button
+                    id="deleteSubjectButton"
+                    class="subject-delete-quick"
+                    type="button"
+                    title="Delete subject"
+                    aria-label="Delete subject"
+                >×</button>
+
+                <button
+                    id="subjectSelectorButton"
+                    class="sidebar-dropdown-button"
+                    type="button"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                >
+                    <span id="subjectSelectorLabel">Select subject</span>
+                    <span class="sidebar-dropdown-chevron">⌄</span>
+                </button>
+
+                <div
+                    id="subjectSelectorMenu"
+                    class="sidebar-dropdown-menu"
+                    role="listbox"
+                    hidden
+                ></div>
+            </div>
+        </div>
+
+        <div class="materials-header">
+            <div>
+                <h2>Materials</h2>
+                <span id="materialCount">0 files</span>
+            </div>
+            <button id="refreshButton" class="icon-button" title="Refresh">↻</button>
+        </div>
+
+        <div id="dropZone" class="drop-zone">
+            <div class="upload-icon">＋</div>
+            <strong>Drop files here</strong>
+            <span>or click to upload</span>
+            <input id="fileInput" type="file" multiple hidden accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.csv,.txt,.md,.jpg,.jpeg,.png,.webp,.tiff">
+        </div>
+
+        <div class="folder-toolbar">
+        <button id="newFolderButton" class="new-folder-button" type="button">
+            ＋ New folder
+        </button>
+    </div>
+    <div id="documentList" class="document-list"></div>
+    </aside>
+
+    <main class="chat-panel">
+        <header class="chat-header">
+            <div>
+                <span class="eyebrow">PERSONAL STUDY ASSISTANT</span>
+                <h2>Hi, I'm El Amigo.</h2>
+                <p>Ask me about your study material and I'll show you where the answer came from.</p>
+            </div>
+
+            
+        </header>
+
+        <section id="conversation" class="conversation">
+            <div class="empty-state" id="emptyState">
+                <div class="empty-mark">EA</div>
+                <h3>What are we learning today?</h3>
+                <p>
+                    Ask a question about your uploaded material.
+                    El Amigo will keep answers grounded in your sources.
+                </p>
+
+                <div class="suggestions">
+                    <button class="suggestion">Summarise the key ideas in my material</button>
+                    <button class="suggestion">Explain this topic in simpler language</button>
+                    <button class="suggestion">What should I remember for an exam?</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="composer">
+            <form id="chatForm">
+                <textarea
+                    id="questionInput"
+                    rows="1"
+                    placeholder="Ask El Amigo about your study material..."
+                ></textarea>
+                <button id="sendButton" type="submit">Ask</button>
+            </form>
+            <p>Answers in My Material mode are grounded in the learner's uploaded sources.</p>
+        </footer>
+    </main>
+
+</div>
+
+<script src="/static/app.js?v=23"></script>
+</body>
+</html>
